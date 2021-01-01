@@ -9,7 +9,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.question}>What's on your mind? How are you feeling?</Text>
-      <Button title='Add a new Entry!'/>
+      <Button style={styles.adding} title='Add a new Entry!'/>
       <StatusBar style="auto" />
     </View>
   );
