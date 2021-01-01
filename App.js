@@ -1,11 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
+
+  const [addaNew, setAddaNew] = useState('false')
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text style={styles.question}>What's on your mind? How are you feeling?</Text>
+      <Button title='Add a new Entry!'/>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,9 +17,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 100,
   },
+  
+  question: {
+    fontSize: 24
+  }
+
 });
