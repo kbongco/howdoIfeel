@@ -1,6 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import AddMood from "./Screens/AddMood";
+import Header from "./Components/Header";
 
 export default function App() {
   const [addaNew, setAddaNew] = useState("false");
@@ -10,14 +12,21 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.question}>
-        What's on your mind? How are you feeling?
-      </Text>
-      <TouchableOpacity style={styles.adding} title="Add a new Entry!" onPress={clickToGo}>
-        <Text>Add an Entry</Text>
-      </TouchableOpacity>
-      <StatusBar style="auto" />
+    <View>
+      <Header title='How are you feeling?'/>
+      <View style={styles.container}>
+        <Text style={styles.question}>
+          What's on your mind? How are you feeling?
+        </Text>
+        <TouchableOpacity
+          style={styles.adding}
+          title="Add a new Entry!"
+          onPress={clickToGo}
+        >
+          <Text>Add an Entry</Text>
+        </TouchableOpacity>
+        <AddMood />
+      </View>
     </View>
   );
 }
